@@ -9,7 +9,19 @@
 <body>	
 	<script>
 		function secondHighest(arr) {
-			//Write your code here
+			if (arr.length < 2 || new Set(arr).size === 1) {
+				
+        return -Infinity;
+    }
+
+    const max = Math.max(...arr);
+    
+    const newArr = arr.filter(num => num !== max);
+    
+    const secondMax = Math.max(...newArr);
+    
+    return secondMax;
+}
 			
 		}
 
